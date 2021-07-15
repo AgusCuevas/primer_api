@@ -1,9 +1,19 @@
 import { Fragment, useState } from 'react';
 import Equipo from './components/Equipo';
 import Jugador from './components/Jugador';
+import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Image, Button, Row, Col } from 'react-bootstrap';
+import styled from '@emotion/styled';
 import './app.css'
+
+  const Contenedor  = styled.div` 
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  border-color: #474747;
+`;
+
 
 function App() {
   <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
@@ -23,64 +33,35 @@ function App() {
     try{
       const api = await fetch(`https://allsportsapi.com/api/football/?&met=Teams&teamId=${idEquipo}&APIkey=${key}`);
       const jugadores = await api.json();
-      setJugadores(jugadores.result[0].players[0]);
+      if(jugadores.result[0].players.length > 0){
+        setJugadores(jugadores.result[0].players)
+      }
+      else{
+        setJugadores([])
+      }
       } catch (error) {
         console.log(error);
       }
   };
 
   return (
-    <Fragment>
-    <Container>
-      <Row>
-        <Col>
-        </Col>
-        <Col>
-          <h3 class = 'titulo'>Equipos de Futbol</h3>
-        </Col>
-        <Col>
-        </Col>
-      </Row>
-          <div
-            style={
-              {
-                paddingTop:"100px",
-                display:"flex",
-                flexDirection:"column",
-                alignItems:"center"
-              }
-          }>
-      <Row>
-      <Col>
-      <button class = 'boton' type="button" class="btn btn-success"
-      variant="light"
-      onClick={consultarAPI}
-      >Buscar equipo Aleatorio
-      </button>
-      </Col>
-      </Row>
-      <Row>
-        <Col>
-        <h6 class = 'subtitulo'>Equipo:</h6>
-        <Equipo
-        equipo = {equipo}
-        />
-        </Col>
-      <Col>
-      </Col>
-      <Col> 
-      <h6 class = 'subtitulo'>Un jugador del equipo:</h6>
-        <Jugador
-          jugadores = {jugadores}
-        />
-      </Col>
-      </Row>
-      <Row>
-      </Row>
-    </div>
-    </Container>
-    </Fragment>
-  
+  <Contenedor>
+    < Header titulo= 'Equipos de Futbol' />
+    <p></p>
+    <button class = 'boton' type="button" class="btn btn-success" 
+    variant="light"
+    onClick={consultarAPI}
+    >Buscar equipo Aleatorio
+    </button>
+    <p></p>
+    <Equipo
+    equipo = {equipo}
+    />
+    <Jugador
+    jugadores = {jugadores}
+    />
+    <p>.</p>
+  </Contenedor>
   );
   
 }

@@ -38,15 +38,25 @@ body {
   opacity: 0.7;
 }
 
-.subtitulo {
-  color: white;
-  font-family: fantasy;
-}
-
 .oracionJugador{
   font-weight: bold;
 }
 
 .oracionEquipo{
   font-weight: bold;
+}
+
+.logoEquipo{
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.contenedorSecundario{
+  background-color: #474747;
+  padding: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  top: 0;
+  margin: "2rem";
+  padding: "3rem";
 }
