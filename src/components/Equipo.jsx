@@ -14,7 +14,7 @@ const Equipo = ({ equipo }) => {
                 borderRightWidth:'3px',
                 borderLeftWidth: '3px',
                 borderBottomWidth: '3px',
-            }
+            } 
         }>
             <div className = 'contenedorSecundario'> Equipo </div>  
             <p></p>

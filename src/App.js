@@ -17,13 +17,22 @@ import './app.css';
 
 function App() {
   <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+  // Hago un state de equipos, arranco con un objeto vacío
+  // porque los equipos vienen como objeto JSON desde la API
   const [equipo, setEquipo] = useState({});
+  // Tambien contamos con el state de jugadores. Son los jugadores
+  // del equipo que trae la api
   const [jugadores, setJugadores] = useState ([]);
 
   let key = 'fafbda535b1c178689a4ca5d6a6090b135adf86a97456d2446b3682d5e6f3c37'
+  // Hago un state de jugadores, arranco con un objeto vacío
+  // porque los equipos vienen como objeto JSON desde la API
   const consultarAPI = async () => {
+    // utilizamos Math.floor para que nos de un numero aleatorio
+    // el cual utilizaremos como la key del equipo
     let idEquipo = Math.floor(Math.random()*(0,3000))
     try{
+      // Consultamos a la api y traemos el equipo
       const api = await fetch(`https://allsportsapi.com/api/football/?&met=Teams&teamId=${idEquipo}&APIkey=${key}`);
       const equipo = await api.json();
       setEquipo(equipo.result[0]);

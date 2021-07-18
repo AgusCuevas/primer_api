@@ -5,6 +5,10 @@ import { Opacity } from '@material-ui/icons';
 
 const Jugador = ({ jugadores}) => {
 
+    // Utilizamos la funcion para hacer un map de todos los jugadores del equipo.
+    // De ellos utilizamos el numero, nombre y la posicion en la que juega
+    // Con el map, para cada jugador, creamos un parrafo con la informacion mencionada anteriormente
+    // Si el equipo no tiene jugadores se muestra un parrafo que lo indica.
     function armarLista(jugadores){
         if (jugadores == []){
         return (<p>No se encuentran jugadores</p>)

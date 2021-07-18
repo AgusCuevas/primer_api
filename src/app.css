@@ -61,6 +61,8 @@ body {
   padding: "3rem";
 }
 
+/* Esto ultimo se utiliza para crear la animacion 
+y que se puedan mover los escudos de los equipos */
 .slider{
   width: 100%;
   height: 600%;
