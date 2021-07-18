@@ -60,7 +60,6 @@ function App() {
     <Jugador
     jugadores = {jugadores}
     />
-    <p>.</p>
     <div class = 'slider'>
       <ul>
         <li>
