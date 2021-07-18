@@ -16,7 +16,6 @@ const Equipo = ({ equipo }) => {
                 borderBottomWidth: '3px',
             }
         }>
-        
             <div className = 'contenedorSecundario'> Equipo </div>  
             <p></p>
             <div align="center"><img class = 'logoEquipo' align="center" src={equipo.team_logo}/></div>
