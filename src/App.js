@@ -25,8 +25,6 @@ function App() {
   const [jugadores, setJugadores] = useState ([]);
 
   let key = 'fafbda535b1c178689a4ca5d6a6090b135adf86a97456d2446b3682d5e6f3c37'
-  // Hago un state de jugadores, arranco con un objeto vacío
-  // porque los equipos vienen como objeto JSON desde la API
   const consultarAPI = async () => {
     // utilizamos Math.floor para que nos de un numero aleatorio
     // el cual utilizaremos como la key del equipo
