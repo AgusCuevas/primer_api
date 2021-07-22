@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Opacity } from '@material-ui/icons';
 
 const Equipo = ({ equipo }) => {
     return ( 

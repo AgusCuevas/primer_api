@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Equipo from './Equipo';
-import { Opacity } from '@material-ui/icons';
 
 const Jugador = ({ jugadores}) => {
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Fragment, useState } from 'react';
 import Equipo from './components/Equipo';
 import Jugador from './components/Jugador';
